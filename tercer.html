@@ -1,0 +1,100 @@
+<html>
+<head>
+  <title>ADMINISTRADOR</title>
+  <style>
+    body {
+      background-color: #eff3f1;
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 50px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.0);
+    }
+    
+    h1 {
+      text-align: center;
+      color: #1b0b0c;
+    }
+    
+    .form-group {
+      margin-bottom: 10px;
+    }
+    
+    label {
+      display: block;
+      color: #024405;
+      font-weight: bold;
+    }
+    
+    input[type="RFC"],
+    input[type="Nombre"],
+    input[type="Apellidoma"],
+    input[type="Apellidopa"],
+    input[type="Correo"],
+    input[type="Rol"],
+    input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccccccb9;
+    }
+    
+    .button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #0f0231;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    
+    .button:hover {
+      background-color: #0f0231;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ADMINISTRADOR</h1>
+    <form>
+      <div class="form-group">
+        <label for="RFC">RFC:</label>
+        <input type="RFC" id="RFC" name="RFC" required>
+      </div>
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="nombre" id="nombre" name="nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="apellidoma">Apellido Materno:</label>
+        <input type="apellidoma" id="apellidoma" name="apellidoma" required>
+      </div>
+      <div class="form-group">
+        <label for="apellidopa">Apellido Paterno:</label>
+        <input type="apellidopa" id="apellidopa" name="apellidopa" required>
+      </div>
+      <div class="form-group">
+        <label for="correo">Correo:</label>
+        <input type="correo" id="correo" name="correo" required>
+      </div>
+      <div class="form-group">
+        <label for="rol">Rol:</label>
+        <input type="rol" id="rol" name="rol" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <a href="#" class="button">Acceder</a>
+    </form>
+  </div>
+</body>
+</html>
