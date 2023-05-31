@@ -1,0 +1,95 @@
+<html>
+<head>
+  <title>Consulta Paciente</title>
+  <style>
+    body {
+      background-color: #eff3f1;
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 50px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.0);
+    }
+    
+    h1 {
+      text-align: center;
+      color: #bd3a12;
+    }
+    
+    .form-group {
+      margin-bottom: 10px;
+    }
+    
+    label {
+      display: block;
+      color: #4a0252;
+      font-weight: bold;
+    }
+    
+    input[type="Id Paciente"],
+    input[type="Nacimiento"],
+    input[type="Enfermedades"],
+    input[type="Alergias"],
+    input[type="Antecedentes"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccccccb9;
+    }
+    
+    .button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #be0251;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    
+    .button:hover {
+      background-color: #be0251;
+    }
+    body {
+        background-image: url("fondo6.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Consulta Paciente</h1>
+    <form>
+      <div class="form-group">
+        <label for="Id Paciente">Id Paciente:</label>
+        <input type="Id Paciente" id="Id Paciente" name="Id Paciente" required>
+      </div>
+      <div class="form-group">
+        <label for="Nacimiento">Fecha Nacimiento:</label>
+        <input type="Nacimiento" id="Nacimiento" name="Nacimiento" required>
+      </div>
+      <div class="form-group">
+        <label for="Enfermedades">Enfermedades:</label>
+        <input type="Enfermedades" id="Enfermedades" name="Enfermedades" required>
+      </div>
+      <div class="form-group">
+        <label for="Alergias">Alergias:</label>
+        <input type="Alergias" id="Alergias" name="Alergias" required>
+      </div>
+      <div class="form-group">
+        <label for="Antecedentes">Antecedentes familiares:</label>
+        <input type="Antecedentes" id="Antecedentes" name="Antecedentes" required>
+      </div>
+      <a href="#" class="button">Guardar</a>
+    </form>
+  </div>
+</body>
+</html>

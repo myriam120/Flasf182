@@ -1,7 +1,6 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <title>LOGIN</title>
+  <title>Citas</title>
   <style>
     body {
       background-color: #eff3f1;
@@ -19,7 +18,7 @@
     
     h1 {
       text-align: center;
-      color: #1b0b0c;
+      color: #5e2514;
     }
     
     .form-group {
@@ -28,12 +27,12 @@
     
     label {
       display: block;
-      color: #f30707;
+      color: #a75306;
       font-weight: bold;
     }
     
-    input[type="RFC"],
-    input[type="password"] {
+    input[type="Id Paciente"],
+    input[type="Cita"] {
       width: 100%;
       padding: 8px;
       border-radius: 5px;
@@ -45,7 +44,7 @@
       width: 100%;
       padding: 10px;
       margin-top: 10px;
-      background-color: #470c04;
+      background-color: #5a5904;
       color: #fff;
       text-align: center;
       text-decoration: none;
@@ -53,10 +52,10 @@
     }
     
     .button:hover {
-      background-color: #470c04;
+      background-color: #5a5904;
     }
     body {
-        background-image: url("fondo3.jpg");
+        background-image: url("fondo7.jpg");
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -64,19 +63,18 @@
 </head>
 <body>
   <div class="container">
-    <h1>LOGIN</h1>
+    <h1>Consulta Cita</h1>
     <form>
       <div class="form-group">
-        <label for="RFC">RFC:</label>
-        <input type="RFC" id="RFC" name="RFC" required>
+        <label for="Id Paciente">Id Paciente:</label>
+        <input type="Id Paciente" id="Id Paciente" name="Id Paciente" required>
       </div>
       <div class="form-group">
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required>
+        <label for="Cita">Fecha Cita:</label>
+        <input type="Cita" id="Cita" name="Cita" required>
       </div>
-      <a href="#" class="button">Iniciar sesión</a>
+      <a href="#" class="button">Consultar</a>
     </form>
   </div>
 </body>
 </html>
-

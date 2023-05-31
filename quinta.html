@@ -1,0 +1,145 @@
+<html>
+<head>
+  <title>Exploracion y Diagnostico</title>
+  <style>
+    body {
+      background-color: #eff3f1;
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 50px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.0);
+    }
+    
+    h1 {
+      text-align: center;
+      color: #1b0b0c;
+    }
+    
+    .form-group {
+      margin-bottom: 10px;
+    }
+    
+    label {
+      display: block;
+      color: #070246;
+      font-weight: bold;
+    }
+    
+    input[type="Id Paciente"],
+    input[type="Fecha"],
+    input[type="Peso"],
+    input[type="Altura"],
+    input[type="Temperatura"],
+    input[type="Latidos"],
+    input[type="Oxigeno"],
+    input[type="Edad"],
+    input[type="Sintomas"],
+    input[type="DX"],
+    input[type="Tratamiento"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccccccb9;
+    }
+    
+    .button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #b80202;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    
+    .button:hover {
+      background-color: #b80202;
+    }
+    body {
+        background-image: url("fondo10.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Exploracion y Diagnostico</h1>
+    <form>
+      <div class="form-group">
+        <label for="Id Paciente">Id Paciente:</label>
+        <input type="Id Paciente" id="Id Paciente" name="Id Paciente" required>
+      </div>
+      <div class="form-group">
+        <label for="Exploracion">Exploracion:</label>
+        <input type="Exploracion" id="Exploracion" name="Exploracion" required>
+      </div>
+      <div class="form-group">
+        <label for="Fecha">Fecha:</label>
+        <input type="Fecha" id="Fecha" name="Fecha" required>
+      </div>
+      <div class="form-group">
+        <label for="Peso">Peso:</label>
+        <input type="Peso" id="Peso" name="Peso" required>
+      </div>
+      <div class="form-group">
+        <label for="Altura">Altura:</label>
+        <input type="Altura" id="Altura" name="Altura" required>
+      </div>
+      <div class="form-group">
+        <label for="Temperatura">Temperatura:</label>
+        <input type="Temperatura" id="Temperatura" name="Temperatura" required>
+      </div>
+      <div class="form-group">
+        <label for="Latidos">Latidos por minuto:</label>
+        <input type="Latidos" id="Latidos" name="Latidos" required>
+      </div>
+      <div class="form-group">
+        <label for="Oxigeno">Oxigeno:</label>
+        <input type="Oxigeno" id="Oxigeno" name="Oxigeno" required>
+      </div>
+      <div class="form-group">
+        <label for="Edad">Edad:</label>
+        <input type="Edad" id="Edad" name="Edad" required>
+      </div>
+      <div class="form-group">
+        <label for="Diagnostico">Diagnostico:</label>
+        <input type="Diagnostico" id="Diagnostico" name="Diagnostico" required>
+      </div>
+      <div class="form-group">
+        <label for="Sintomas">Sintomas:</label>
+        <input type="Sintomas" id="Sintomas" name="Sintomas" required>
+      </div>
+      <div class="form-group">
+        <label for="DX">DX(Diagnostico):</label>
+        <input type="DX" id="DX" name="DX" required>
+      </div>
+      <div class="form-group">
+        <label for="Tratamiento">Tratamiento:</label>
+        <input type="Tratamiento" id="Tratamiento" name="Tratamiento" required>
+      </div>
+      <div class="form-group">
+        <label>
+          <input type="checkbox" id="solicitud_estudios" name="solicitud_estudios">
+          Solicitud de Estudios
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="Receta">Receta:</label>
+        <input type="Receta" id="Receta" name="Receta" required>
+      </div>
+      
+      <a href="#" class="button">Guardar</a>
+      <a href="#" class="button">Descargar</a>
+    </form>
+  </div>
+</body>
+</html>
