@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Fruteria</title>
 </head>
-<body> 
-    {%with mensajes= get_flashed_messages() %}
-     {% if mensajes%}
-      {% for msj in mensajes %}
-        <h3>{{ msj }}</h3>
-      {% endfor %}
-     {% endif %}
-    {%endwith%}
+<body>
+    {% with mensajes = get_flashed_messages() %}
+        {% if mensajes %}
+            {% for msj in mensajes %}
+                <h3>{{ msj }}</h3>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
 
     <br>
     <br>
@@ -25,12 +24,10 @@
         <input type="text" name="txtTemporada" placeholder="Escribe la Temporada">
         <input type="number" name="txtPrecio" placeholder="Escribe el Precio">
         <input type="number" name="txtStock" placeholder="Escribe cuantos son">
-
-        <button type="submit"> Guardar </button>
-        <a href="">Tabla</a>
-        <a href="">Eliminar</a>
-
+        <button type="submit">Guardar</button>
+        <a href="{{ url_for('tabla') }}">Tabla</a>
+        <a href="{{ url_for('buscar') }}">Buscar</a>
     </form>
-    
 </body>
 </html>
+

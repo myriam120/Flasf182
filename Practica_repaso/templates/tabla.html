@@ -1,42 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla de consultas</title>
+    <title>Tabla</title>
 </head>
 <body>
-    <form action="/tabla"></form>
-    <br>
-    <br>
-    <h1>Frutas guardadasS</h1>
-    <br>
+    <h1>Tabla de Frutas</h1>
     <table>
-        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Fruta</th>
+            <th>Temporada</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Acciones</th>
+        </tr>
+        {% for fruta in frutas %}
             <tr>
-                <td>Id:</td>
-                <td>Fruta:</td>
-                <td>Temporada:</td>
-                <td>Precio:</td>
-                <td>Stock:</td>
-            </tr>
-        </thead>
-        <tbody>
-            {% for alb in listAlbums %}
-            <tr>
-                <td>{{ alb.0 }}</td>
-                <td>{{ alb.1 }}</td>
-                <td>{{ alb.2 }}</td>
-                <td>{{ alb.3 }}</td>
-                <td>{{ alb.4 }}</td>
+                <td>{{ fruta[0] }}</td>
+                <td>{{ fruta[1] }}</td>
+                <td>{{ fruta[2] }}</td>
+                <td>{{ fruta[3] }}</td>
+                <td>{{ fruta[4] }}</td>
                 <td>
-                    <a href="/editar/{{alb.0}}">Editar</a>
-                    <a href="/borrar/{{alb.0}}">Eliminar</a>
-                    <a href=""></a>
+                    <a href="{{ url_for('editar', id=fruta[0]) }}">Editar</a>
+                    <a href="{{ url_for('eliminar', id=fruta[0]) }}">Eliminar</a>
                 </td>
             </tr>
-            {% endfor %}
-        </tbody>
+        {% endfor %}
     </table>
 </body>
 </html>

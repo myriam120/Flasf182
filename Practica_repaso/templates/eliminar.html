@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Fruta</title>
+</head>
+<body>
+    <h1>Eliminar Fruta</h1>
+    <p>¿Estás seguro de que deseas eliminar la fruta "{{ fruta[1] }}"?</p>
+    <form action="{{ url_for('eliminar', id=fruta[0]) }}" method="POST">
+        <button type="submit">Eliminar</button>
+        <a href="{{url_for('index1')}}"><button type="button">Cancelar</button></a>
+    </form>
+</body>
+</html>
