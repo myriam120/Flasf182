@@ -17,7 +17,7 @@ mysql = MySQL(app)
 @app.route('/')
 def index2():
     curSelect = mysql.connection.cursor()
-    curSelect.execute('SELECT * FROM tbflores')
+    curSelect.execute('SELECT * FROM dbflores')
     consulta = curSelect.fetchall()
 
     return render_template('index2.html', flores=consulta)
@@ -25,21 +25,29 @@ def index2():
 @app.route('/guardar', methods=['POST'])
 def guardar():
     if request.method == 'POST':
-        VNombre= request.form['txtNombre']
+        VNombre = request.form['txtNombre']
         VCantidad = request.form['txtCantidad']
         VPrecio = request.form['txtPrecio']
-
+        #print(titulo, artista, anio)
         cs = mysql.connection.cursor()
-        cs.execute('INSERT INTO tbflores (nombre, cantidad, precio) VALUES (%s, %s, %s)', (VNombre, VCantidad, VPrecio))
+        cs.execute('insert into dbflores (nombre, cantidad, precio) values(%s,%s,%s)', (VNombre,VCantidad,VPrecio)); 
         mysql.connection.commit()
-
+        
     flash('La flor fue guardada correctamente :)')
     return redirect(url_for('index2'))
+
+
+@app.route('/tabla')
+def tabla():
+    curEditar = mysql.connection.cursor()
+    curEditar.execute('SELECT * FROM dbflores')
+    consulta = curEditar.fetchall()
+    return render_template('tablaflores.html', flores=consulta)
 
 @app.route('/editar/<id>', methods=['GET', 'POST'])
 def editar(id):
     curEditar = mysql.connection.cursor()
-    curEditar.execute('SELECT * FROM tbflores WHERE id = %s', (id,))
+    curEditar.execute('SELECT * FROM dbflores WHERE id = %s', (id,))
     consulta = curEditar.fetchone()
 
 @app.route('/buscar', methods=['GET', 'POST'])
@@ -47,7 +55,7 @@ def buscar():
     if request.method == 'POST':
         nombre = request.form['txtNombre']
         curBuscar = mysql.connection.cursor()
-        curBuscar.execute('SELECT * FROM tbflores WHERE fruta LIKE %s', (f'%{nombre}%',))
+        curBuscar.execute('SELECT * FROM dbflores WHERE fruta LIKE %s', (f'%{nombre}%',))
         consulta = curBuscar.fetchall()
         return render_template('buscarflor.html', frutas=consulta)
 

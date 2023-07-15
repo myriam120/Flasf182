@@ -4,25 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabla de flores</title>
+    
+    <center><h1>Registra tu flor</h1></center>
 </head>
 <body>
 
-    {% with mensajes = get_flashed_messages() %}
-        {% if mensajes %}
-            {% for msj in mensajes %}
-                <h3>{{ msj }}</h3>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+    {%with mensajes= get_flashed_messages() %}
+     {% if mensajes%}
+      {% for msj in mensajes %}
+        <h3>{{ msj }}</h3>
+      {% endfor %}
+     {% endif %}
+    {%endwith%}
 
     <br>
     <br>
-    <input type="text" name="txtNombre" placeholder="Escribe el nombre">
-    <input type="number" name="txtCantidad" placeholder="Escribe la cantidad">
-    <input type="number" name="txtPrecio" placeholder="Escribe el precio">
     
-    <button type="submit">Guardar</button>
-    <a href="{{ url_for('') }}">Tabla</a>
-    <a href="{{ url_for('buscar') }}">Buscar</a>
+    <form action="/guardar" method="POST"></form>
+        <input type="text" name="txtNombre" placeholder="Escribe el nombre">
+        <input type="text" name="txtCantidad" placeholder="Escribe la cantidad">
+        <input type="text" name="txtPrecio" placeholder="Escribe el precio">
+    
+        <button type="submit">Guardar</button>
+        <a href="{{ url_for('tabla') }}">Tabla</a>
+        <a href="{{ url_for('buscar') }}">Buscar</a>
+
+    </form>
 </body>
 </html>
