@@ -6,11 +6,11 @@
     <title>Editar Flor</title>
 </head>
 <body>
-    <h1>Editar Fruta</h1>
-    <form action="{{ url_for('editar2', id=fruta[0]) }}" method="POST">
-        <input type="text" name="txtNombre" placeholder="Escribe el nombre" value="{{ fruta[1] }}">
-        <input type="number" name="txtCantidad" placeholder="Escribe la cantidad" value="{{ fruta[2] }}">
-        <input type="number" name="txtPrecio" placeholder="Escribe el Precio" value="{{ fruta[3] }}">
+    <h1>Editar Flor</h1>
+    <form action="{{ url_for('editar', id=flor[0]) }}" method="POST">
+        <input type="text" name="txtNombre" placeholder="Escribe el nombre" value="{{ flor[1] }}">
+        <input type="number" name="txtCantidad" placeholder="Escribe la cantidad" value="{{ flor[2] }}">
+        <input type="number" name="txtPrecio" placeholder="Escribe el Precio" value="{{ flor[3] }}">
         <button type="submit">Actualizar</button>
     </form>
 </body>
