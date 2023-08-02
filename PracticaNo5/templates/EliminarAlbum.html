@@ -8,7 +8,7 @@
         <h3>Seguro que quieres eliminar este album?</h3>
         <br>
         <br>
-        <form action="" method="POST">
+        <form action="/eliminar/{{album.0}}" method="POST">
             <input type="text" name="txtTitulo", value="{{album.1}}",readonly>
             <input type="text" name="txtArtista", value="{{album.2}}", readonly>
             <input type="number" name="txtAnio", value="{{album.3}}", readonly>
@@ -19,5 +19,4 @@
         </form>
     </center>
 
-{%endblock%}  
-
+{%endblock%}
