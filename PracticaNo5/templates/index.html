@@ -3,18 +3,27 @@
 {%block body%}
     
 
-    {%with mensajes= get_flashed_messages() %}
-     {% if mensajes%}
-      {% for msj in mensajes %}
-        <h3>{{ msj }}</h3>
-      {% endfor %}
-     {% endif %}
-    {%endwith%}
+    
 
     
     <h1 class="display-1 text-center mt-5 mb-5 text-danger">Gestion de Albums</h1>
 
         <div class="container-fluid">
+
+    {%with mensajes= get_flashed_messages() %}
+     {% if mensajes%}
+      {% for msj in mensajes %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>{{ msj }}</strong> 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+
+          <script> Swal.fire('Buen trabajo','Finalizamos con exito el CRUD Flask!','success')</script>
+
+      {% endfor %}
+     {% endif %}
+    {%endwith%}
+
         <div class="row">
            <div class="col-md-5">
             <div class="card card-body">
@@ -50,6 +59,7 @@
                         <td>Nombre:</td>
                         <td>Artista:</td>
                         <td>Año de publicacion:</td>
+                        <td>Acciones</td>
                     </tr>
                 </thead>
                 <tbody>
