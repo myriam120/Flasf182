@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscas esta flor</title>
+    <title>Resultado de Búsqueda</title>
 </head>
 <body>
     <h1>Buscar Fruta</h1>
@@ -11,7 +11,9 @@
         <input type="text" name="txtNombre" placeholder="Buscar por nombre">
         <button type="submit">Buscar</button>
     </form>
-
+    
+    <hr>
+    
     {% if flores %}
         <table>
             <tr>
@@ -22,16 +24,18 @@
             </tr>
             {% for flor in flores %}
                 <tr>
-                    <td>{{ fruta[0] }}</td>
-                    <td>{{ fruta[1] }}</td>
-                    <td>{{ fruta[2] }}</td>
-                    <td>{{ fruta[3] }}</td>
+                    <td>{{ flor[0] }}</td>
+                    <td>{{ flor[1] }}</td>
+                    <td>{{ flor[2] }}</td>
+                    <td>{{ flor[3] }}</td>
                     <td>
-                        <a href="{{ url_for('editar', id=fruta[0]) }}">Editar</a>
+                        <a href="{{ url_for('editar', id=flor[0]) }}">Editar</a>
                     </td>
                 </tr>
             {% endfor %}
         </table>
+    {% else %}
+        <p>No se encontraron flores.</p>
     {% endif %}
 </body>
 </html>

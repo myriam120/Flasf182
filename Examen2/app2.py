@@ -15,7 +15,7 @@ mysql = MySQL(app)
 @app.route('/')
 def index2():
     curSelect = mysql.connection.cursor()
-    curSelect.execute('SELECT * FROM dbflores')
+    curSelect.execute('SELECT * FROM tbFlores')
     consulta = curSelect.fetchall()
 
     return render_template('index2.html', flores=consulta)
@@ -28,7 +28,7 @@ def guardar():
         VPrecio = request.form['txtPrecio']
 
         cs = mysql.connection.cursor()
-        cs.execute('INSERT INTO dbflores (nombre, cantidad, precio) VALUES (%s, %s, %s)', (VNombre, VCantidad, VPrecio))
+        cs.execute('INSERT INTO tbFlores (nombre, cantidad, precio) VALUES (%s, %s, %s)', (VNombre, VCantidad, VPrecio))
         mysql.connection.commit()
 
     flash('La flor fue guardada correctamente :)')
@@ -37,14 +37,14 @@ def guardar():
 @app.route('/tabla')
 def tabla():
     curEditar = mysql.connection.cursor()
-    curEditar.execute('SELECT * FROM dbflores')
+    curEditar.execute('SELECT * FROM tbFlores')
     consulta = curEditar.fetchall()
     return render_template('tablaf.html', flores=consulta)
 
 @app.route('/editar/<id>', methods=['GET', 'POST'])
 def editar(id):
     curEditar = mysql.connection.cursor()
-    curEditar.execute('SELECT * FROM dbflores WHERE id = %s', (id,))
+    curEditar.execute('SELECT * FROM tbFlores WHERE id = %s', (id,))
     consulta = curEditar.fetchone()
 
     # Actualizar la flor
@@ -54,7 +54,7 @@ def editar(id):
         nuevoPrecio = request.form['txtPrecio']
 
         curActualizar = mysql.connection.cursor()
-        curActualizar.execute('UPDATE dbflores SET nombre = %s, cantidad = %s, precio = %s WHERE id = %s', (nuevoNombre, nuevaCantidad, nuevoPrecio, id))
+        curActualizar.execute('UPDATE tbFlores SET nombre = %s, cantidad = %s, precio = %s WHERE id = %s', (nuevoNombre, nuevaCantidad, nuevoPrecio, id))
         mysql.connection.commit()
 
         flash('La flor ha sido actualizada correctamente :)')
@@ -67,11 +67,18 @@ def buscar():
     if request.method == 'POST':
         nombre = request.form['txtNombre']
         curBuscar = mysql.connection.cursor()
-        curBuscar.execute('SELECT * FROM dbflores WHERE nombre LIKE %s', (f'%{nombre}%',))
+        curBuscar.execute('SELECT * FROM tbFlores WHERE nombre LIKE %s', (f'%{nombre}%',))
         consulta = curBuscar.fetchall()
         return render_template('buscarflor.html', flores=consulta)
 
     return render_template('buscarflor.html')
+
+def eliminar(id):
+    curEliminar = mysql.connection.cursor()
+    curEliminar.execute('DELETE FROM tbFlores WHERE id = %s', (id,))
+    mysql.connection.commit()
+    flash('Flor eliminada correctamente', 'success')
+    return redirect(url_for('buscar'))
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
